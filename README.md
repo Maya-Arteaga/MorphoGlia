@@ -2,7 +2,7 @@
                          
 ![Figure2](https://github.com/Maya-Arteaga/Morphology/assets/70504322/c498a759-7cff-4317-ba91-7fa1a8c1521f)
 
-Introduction 
+##Introduction 
 
 Since its discovery, microglia cells has intrigued researchers with their ability to respond to external stimuli, adapting its morphology, migrating, and accumulating at lesion sites (Del Rio-Hortega, 1932). This dynamic behavior endows them with remarkable sensitivity to various brain microenvironments, enabling them to execute a myriad of complex homeostatic processes and resulting in a remarkably diverse morphology (Matejuk, 2020; Sierra et al., 2014; Lier, J. 2020; McNamara et al., 2014 al., 2023). Due to their responsiveness to microenvironments, microglia play a crucial role in understanding and addressing neurological diseases and central nervous system disorders (Li, 2018; Matejuk, 2020). Consequently, the quantitative assessment of microglial morphology has become widespread in neuroscience, particularly in the evaluation of neuroinflammatory states (Green, 2022).
 
@@ -15,7 +15,7 @@ Given the diverse nature of microglia and the unique aspects of each study, it's
 
 
 
-Morphometrics Analysis
+##Morphometrics Analysis
 
 Each cell was first identified in the complete binary photomicrographs, after which classic morphometric features were computed. Skeleton analysis involved measuring the total length of branches (in pixels), counting the number of initial points (also referred to as cell processes emerging from the cell soma), determining the number of junction points (where branches subdivide), and counting the number of endpoints (endpoints of branches). Cell body analysis encompassed calculating the area, perimeter, circularity (where 1 represents a perfect circle), Feret diameter (maximum calliper diameter), compactness (how closely an object packs its area), aspect ratio (width/height), orientation (angle in degrees), and eccentricity (major axis/minor axis). These same features were computed for the entire cell obtained from the image. Fractal analysis involved determining convex hulls (the smallest convex set of pixels enclosing a cell), employing the same calculations as in cell body analysis. Sholl analysis consisted of identifying the number of Sholl circles (circles with increasing radii created around the centroid of the cell soma), counting crossing processes (intersections of cell processes with Sholl circles), and measuring the max distance (maximum distance between the centroid and the four vertices of the image).
 
