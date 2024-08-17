@@ -14,6 +14,7 @@ The **executable mode** is available for download at the following link: https:/
 The **source code** is located in the MorphoGlia_code directory. This directory includes the interactive mode for point tracking, color mapping to customize cluster colors, and the R and Python scripts needed to reproduce the graphics.
 
 Also, check out the video **"MorphoGlia Tutorial" on YouTube** for an example of how to use the MorphoGlia software: https://www.youtube.com/watch?v=OLLS9I8ln48&t=17s
+
 Currently, the software is available for Macs with M1/M2 processors. We are working on versions for Intel-based Macs and Windows.
 
 
