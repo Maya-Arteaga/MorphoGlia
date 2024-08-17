@@ -47,7 +47,25 @@ Following UMAP for dimensionality reduction, Hierarchical Density-Based Spatial 
 ![UMAP_HDBSCAN_10_0 1_20_10](https://github.com/user-attachments/assets/95d89ac5-d7c6-4cea-8f28-d5c1df14f32a)
 
 
+
+### Confusion Matrices of the Study Groups and MorphoGlia Clusters
+Contrasting the confusion matrices generated for distinguishing the study groups and MorphoGlia clusters reveals significant differences in classification accuracy. When evaluating the study groups directly, the accuracy is 0.47, indicating considerable overlap in morphological states. In contrast, clustering with the MorphoGlia pipeline significantly improves classification accuracy to 0.97. This improvement suggests that there is a mixing of morphological states within the study groups, akin to Simpson's Paradox, and that the MorphoGlia pipeline effectively unveils distinct morphological clusters.
+
+![Confusion_Matrices](https://github.com/user-attachments/assets/63f70de7-a993-4649-95e3-bb74ff5cef8e)
+
+
+### From Data Points to Microglial Morphologies: Visualizing Cluster Variability
+This figure demonstrates the application of the umap.plot.interactive() function to trace individual microglial cells to their respective data points within the UMAP space. Despite the effective clustering of morphological states by HDBSCAN, there is variability within the clusters. This variability arises from the 16 selected features, which have been reduced to two dimensions through UMAP, capturing a broad spectrum of microglial morphologies. Notably, MorphoGlia displays these morphologies along a curved continuum, illustrating a gradual transition across diverse microglial states. This visualization underscores the complexity of microglial morphology and the utility of advanced clustering techniques in identifying subtle differences within grouped data.
+
 ![umap_cells_ink](https://github.com/user-attachments/assets/87c29efb-f4ab-45c8-a51f-2b68db83d1e4)
+
+
+
+### Noise detection by HDBSCAN algorithm.
+The Hierarchical Density-Based Spatial Clustering of Applications with Noise (HDBSCAN) algorithm operates with minimal assumptions about cluster formation. It identifies clusters as regions of high density distinctly separated by low-density areas, eliminating the need to predefine the number of clusters. This functionality allows HDBSCAN to effectively manage data noise by excluding points outside high-density regions, thereby enhancing its robustness. This capability facilitates the detection of outliers or preprocessing errors. However, in this case, there seems to be no preprocessing error in the cell data. Accordingly, it may be inferred that the detected noise represents transitional morphological states between two clusters, which do not conform to any high-density regions. Further investigation is warranted to clarify this issue. The orange marker indicates the location of three data points represented as noise by HDBSCAN within the structure identified by UMAP. On the left, the corresponding three cells are displayed for visualization.
+
+
+![Noise](https://github.com/user-attachments/assets/a8dbcf9b-1c22-4f7d-a6ba-1e0bd3e8f48e)
 
 
 
@@ -56,4 +74,8 @@ Dimensionality reduction and clustering result in color-coded data points, each 
 
 
 ![5](https://github.com/user-attachments/assets/7d7efaca-398b-478d-86c9-a44af693941d)
+
+
+
+
 
