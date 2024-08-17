@@ -3,12 +3,18 @@
 ![Figure2](https://github.com/Maya-Arteaga/Morphology/assets/70504322/c498a759-7cff-4317-ba91-7fa1a8c1521f)
 
 
-## MorphoGlia code, Interface and Software
+### MorphoGlia code, Interface and Software
 MorphoGlia has been developed with a focus on user-friendliness and accessibility, making it an ideal tool for the broader scientific community. The software is available in two main modes: a software mode and an interface mode, both designed to facilitate ease of use. The executable file was generated using PyInstaller (https://pyinstaller.org/en/stable/), while the interactive interface was built using the Tkinter Python library (https://docs.python.org/3/library/tkinter.html).
 For advanced users, direct modification of the source code is recommended to tailor the application to the specific needs of individual experiments. This approach allows for greater flexibility and customization, ensuring that MorphoGlia can be adapted to a wide range of research scenarios.
-All components of MorphoGlia, including the executable file, interface mode, and code mode, are available for download from the following GitHub repository: https://github.com/Maya-Arteaga/MorphoGlia.
 
-2.8 Morphology analysis
+To use the interface mode, download the MorphoGlia_Interface directory. You can run it from the terminal or through a Python interface. Ensure that the files MorphoGlia_app.py and morphoglia.py are located in the same directory. You will need to install the necessary libraries.
+
+The executable mode is available for download at the following link:
+
+The source code is located in the MorphoGlia_code directory. This directory includes the interactive mode for point tracking, color mapping to customize cluster colors, and the R and Python scripts needed to reproduce the graphics.
+
+
+### Morphology analysis
 Each cell was identified in the complete binary photomicrographs, and classic morphometric features were computed using Python, primarily with the OpenCV library (https://pypi.org/project/opencv-python/). For skeleton analysis, the total branch length (in pixels), number of initial points (cell processes emerging from the soma), number of junction points (branch subdivisions), and number of endpoints (ends of branches) were measured. Cell body analysis included calculating the area, perimeter, circularity (with 1 representing a perfect circle), Feret diameter (maximum caliper diameter), compactness (how closely an object packs its area), aspect ratio (width/height), orientation (angle in degrees), and eccentricity (major axis/minor axis). The same metrics used in cell body analysis were applied to the entire cell. Fractal analysis involved determining convex hulls (the smallest convex set of pixels enclosing a cell) and performing the same calculations as in cell body analysis, as well as calculating the fractal dimension. Sholl analysis consisted of identifying the number of Sholl circles (circles with increasing radii created around the centroid of the cell soma), counting crossing processes (intersections of cell processes with Sholl circles), and measuring the maximum distance (distance between the centroid and the four vertices of the image). These metrics allow researchers to analyze the biologically relevant characteristics of the cell.
 
 2.9 Feature selection
