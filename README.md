@@ -20,8 +20,33 @@ Currently, the software is available **for Macs with M1/M2 processors**. We are 
 
 Python 3.10.14
 
+pip install opencv-python
+print(cv2.__version__)
+4.10.0
 
+pip install pandas
+print(pandas.__version__)
+2.2.2
 
+pip install tifffile
+print(tifffile.__version__)
+2024.8.10
+
+pip install scikit-image
+print(skimage.__version__)
+0.24.0
+
+pip install matplotlib
+print(matplotlib.__version__)
+3.9.2
+
+pip install scikit-learn
+print(sklearn.__version__)
+1.5.1
+
+pip install seaborn
+print(seaborn.__version__)
+0.13.2
 
 ![Figure2](https://github.com/Maya-Arteaga/Morphology/assets/70504322/c498a759-7cff-4317-ba91-7fa1a8c1521f)
 
