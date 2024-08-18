@@ -9,7 +9,7 @@
 
 
 
-## I) Introduction
+# I) Introduction
 
 
 ## MorphoGlia code, Interface and Software
@@ -26,7 +26,7 @@ Also, check out the video **"MorphoGlia Tutorial" on YouTube** for an example of
 
 Currently, the software is available **for Macs with M1/M2 processors**. We are working on versions for Intel-based Macs and Windows.
 
-## II) How to start using MorphoGlia
+# II) How to start using MorphoGlia
 
 ## 1) Python Environment Setup
 
