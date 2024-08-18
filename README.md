@@ -18,7 +18,7 @@ Also, check out the video **"MorphoGlia Tutorial" on YouTube** for an example of
 Currently, the software is available **for Macs with M1/M2 processors**. We are working on versions for Intel-based Macs and Windows.
 
 
-## Required libraries to install and their version:
+## Required libraries to install previous executing the code and their versions:
 
 Python 3.10.14
 
