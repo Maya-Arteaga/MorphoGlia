@@ -1,13 +1,15 @@
 # MorphoGlia: Clustering and Mapping Microglia Morphology
-                         
+
+- [1) Introduction](#1-introduction)
+- [2) How to Install it](#2-how-to-start-using-MorphoGlia)
+- [3) Methodology](#3-methodology)
+
+
 ![GA5](https://github.com/user-attachments/assets/564cf540-9c39-4aa0-a68f-18a5e9076ea5)
 
 
 
-- [1) Introduction](#1-introduction)
-- [2) How to Install it](#2-how-to-install-it)
-- [3) Methodology](#3-methodology)
-
+## 1) Introduction
 
 
 ## MorphoGlia code, Interface and Software
@@ -24,7 +26,7 @@ Also, check out the video **"MorphoGlia Tutorial" on YouTube** for an example of
 
 Currently, the software is available **for Macs with M1/M2 processors**. We are working on versions for Intel-based Macs and Windows.
 
-# Using the Interface or Code Mode
+## 2) How to start using MorphoGlia
 
 ## 1) Python Environment Setup
 
