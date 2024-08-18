@@ -78,7 +78,7 @@ pip show holoviews | grep Version  # Expected: 1.19.1
 
 ```
 
-## Downloading and Running Files
+## 3) Downloading and Running Files
 
 
 ![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
