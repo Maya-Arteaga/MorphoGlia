@@ -105,12 +105,13 @@ This will start and display the interface mode.
 Alternatively, you can run the interface from a Python IDE by opening the Morphoglia_app.py file and executing it.
 
 
+![Graph_Abstract2](https://github.com/user-attachments/assets/c4b873ca-26cf-4715-b6ac-5041d964039a)
 
 
 
 # III) Methodology
 
-![Figure2](https://github.com/Maya-Arteaga/Morphology/assets/70504322/c498a759-7cff-4317-ba91-7fa1a8c1521f)
+
 
 
 ### Morphology analysis
