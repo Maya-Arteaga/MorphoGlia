@@ -18,6 +18,9 @@ Also, check out the video **"MorphoGlia Tutorial" on YouTube** for an example of
 Currently, the software is available **for Macs with M1/M2 processors**. We are working on versions for Intel-based Macs and Windows.
 
 
+Python 3.10.14
+
+
 
 
 ![Figure2](https://github.com/Maya-Arteaga/Morphology/assets/70504322/c498a759-7cff-4317-ba91-7fa1a8c1521f)
