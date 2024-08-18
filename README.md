@@ -76,6 +76,8 @@ pip show bokeh | grep Version  # Expected: 3.5.1
 pip install holoviews
 pip show holoviews | grep Version  # Expected: 1.19.1
 
+```
+
 ## Downloading and Running Files
 
 
