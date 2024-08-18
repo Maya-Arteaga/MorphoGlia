@@ -92,8 +92,16 @@ pip show holoviews | grep Version  # Expected: 1.19.1
 ![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
 
 
+**a)** Open the `MorphoGlia-main` folder and move the `MorphoGlia_Interface` folder to your Desktop.
+**b)** Open your terminal and navigate to the directory containing the `Morphoglia_Interface` files.
+**c)** Change the directory to `Morphoglia_Interface`. For example:
 
-Set up in the directory containing the downloaded files from the `Morphoglia_Interface` on your terminal. Run the interface using the following command:
+Locate on the directory "Morphoglia_Interface". For example:
+```bash
+cd Desktop/Morphoglia_Interface
+```
+
+**d)** Run the interface using the following command:
 
 ```bash
 python Morphoglia_app.py
