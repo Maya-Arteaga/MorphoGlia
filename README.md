@@ -110,6 +110,8 @@ Contrasting the confusion matrices generated for distinguishing the study groups
 ### From Data Points to Microglial Morphologies: Visualizing Cluster Variability
 This figure demonstrates the application of the umap.plot.interactive() function to trace individual microglial cells to their respective data points within the UMAP space. Despite the effective clustering of morphological states by HDBSCAN, there is variability within the clusters. This variability arises from the 16 selected features, which have been reduced to two dimensions through UMAP, capturing a broad spectrum of microglial morphologies. Notably, MorphoGlia displays these morphologies along a curved continuum, illustrating a gradual transition across diverse microglial states. This visualization underscores the complexity of microglial morphology and the utility of advanced clustering techniques in identifying subtle differences within grouped data.
 
+This function is just available in the code mode
+
 ![umap_cells_ink](https://github.com/user-attachments/assets/87c29efb-f4ab-45c8-a51f-2b68db83d1e4)
 
 
