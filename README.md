@@ -48,6 +48,24 @@ pip install seaborn
 print(seaborn.__version__)
 0.13.2
 
+pip install umap-learn
+print(umap.__version__)
+0.5.6
+
+pip install hdbscan
+pip show hdbscan
+Name: hdbscan
+Version: 0.8.38.post1
+
+pip install datashader
+Version: 0.16.3
+
+pip install bokeh
+Version: 3.5.1
+
+pip install holoviews
+Version: 1.19.1
+
 ![Figure2](https://github.com/Maya-Arteaga/Morphology/assets/70504322/c498a759-7cff-4317-ba91-7fa1a8c1521f)
 
 
