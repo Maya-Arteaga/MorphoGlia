@@ -103,6 +103,9 @@ This will start and display the interface mode.
 
 Alternatively, you can run the interface from a Python IDE by opening the Morphoglia_app.py file and executing it.
 
+![Gif_python](https://github.com/user-attachments/assets/5afc5741-8a9f-4189-8bb3-7d98716225ac)
+
+
 
 ![Graph_Abstract2](https://github.com/user-attachments/assets/c4b873ca-26cf-4715-b6ac-5041d964039a)
 
