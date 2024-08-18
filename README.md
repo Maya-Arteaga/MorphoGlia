@@ -68,6 +68,13 @@ Version: 3.5.1
 pip install holoviews
 Version: 1.19.1
 
+
+
+## To Downnload the files:
+
+![Download_4](https://github.com/user-attachments/assets/74599135-de7d-4d37-b6ea-8bbbf774585b)
+
+
 ![Figure2](https://github.com/Maya-Arteaga/Morphology/assets/70504322/c498a759-7cff-4317-ba91-7fa1a8c1521f)
 
 
