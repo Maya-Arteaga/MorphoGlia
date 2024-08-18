@@ -93,7 +93,9 @@ pip show holoviews | grep Version  # Expected: 1.19.1
 
 
 **a)** Open the `MorphoGlia-main` folder and move the `MorphoGlia_Interface` folder to your Desktop.
+
 **b)** Open your terminal and navigate to the directory containing the `Morphoglia_Interface` files.
+
 **c)** Change the directory to `Morphoglia_Interface`. For example:
 
 Locate on the directory "Morphoglia_Interface". For example:
