@@ -112,6 +112,8 @@ This figure demonstrates the application of the umap.plot.interactive() function
 
 This function is just available in the code mode
 
+![Gif (4)](https://github.com/user-attachments/assets/8480ddfc-239b-4066-b08d-dfded4e11c9d)
+
 ![umap_cells_ink](https://github.com/user-attachments/assets/87c29efb-f4ab-45c8-a51f-2b68db83d1e4)
 
 
