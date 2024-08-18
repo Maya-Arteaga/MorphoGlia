@@ -80,6 +80,11 @@ pip show holoviews | grep Version  # Expected: 1.19.1
 
 ## 3) Downloading and Running Files
 
+
+![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
+
+
+
 Set up in the directory containing the downloaded files from the `Morphoglia_Interface` on your terminal. Run the interface using the following command:
 
 ```bash
@@ -89,10 +94,6 @@ python Morphoglia_app.py
 This will start and display the interface mode. 
 
 Alternatively, you can run the interface from a Python IDE by opening the Morphoglia_app.py file and executing it.
-
-![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
-
-
 
 
 
