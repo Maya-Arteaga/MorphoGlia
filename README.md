@@ -1,7 +1,7 @@
 # MorphoGlia: Clustering and Mapping Microglia Morphology
 
 - [I) Introduction](#I-introduction)
-- [II) How to Install it](#II-how-to-start-using-MorphoGlia)
+- [II) How to Install MorphoGlia](#II-how-to-start-using-MorphoGlia)
 - [III) Methodology](#III-methodology)
 
 
