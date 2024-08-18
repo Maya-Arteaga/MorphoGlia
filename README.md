@@ -20,6 +20,8 @@ Currently, the software is available **for Macs with M1/M2 processors**. We are 
 
 Python 3.10.14
 
+## Required libraries to install and their version:
+
 pip install opencv-python
 print(cv2.__version__)
 4.10.0
