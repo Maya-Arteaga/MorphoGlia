@@ -18,9 +18,9 @@ Also, check out the video **"MorphoGlia Tutorial" on YouTube** for an example of
 Currently, the software is available **for Macs with M1/M2 processors**. We are working on versions for Intel-based Macs and Windows.
 
 
-Python 3.10.14
-
 ## Required libraries to install and their version:
+
+Python 3.10.14
 
 pip install opencv-python
 print(cv2.__version__)
