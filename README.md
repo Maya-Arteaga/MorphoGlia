@@ -107,11 +107,11 @@ Alternatively, you can run the interface from a Python IDE by opening the Morpho
 
 
 
-![Graph_Abstract2](https://github.com/user-attachments/assets/c4b873ca-26cf-4715-b6ac-5041d964039a)
-
 
 
 # III) Methodology
+
+![Graph_Abstract2](https://github.com/user-attachments/assets/c4b873ca-26cf-4715-b6ac-5041d964039a)
 
 
 
