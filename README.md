@@ -17,60 +17,67 @@ Also, check out the video **"MorphoGlia Tutorial" on YouTube** for an example of
 
 Currently, the software is available **for Macs with M1/M2 processors**. We are working on versions for Intel-based Macs and Windows.
 
+# Using the Interface or Code Mode
 
-## Required libraries to install previous executing the code and their versions:
+## 1) Python Environment Setup
 
-Python 3.10.14
+Ensure you have **Python 3.10.14** installed. You can use a terminal or an Integrated Development Environment (IDE) such as Spyder, PyCharm, or Visual Studio.
 
+## 2) Install Required Libraries
+
+To ensure compatibility, install the following libraries and verify their versions:
+
+```bash
+# Install OpenCV
 pip install opencv-python
-print(cv2.__version__)
-4.10.0
+python -c "import cv2; print(cv2.__version__)"  # Expected: 4.10.0
 
+# Install Pandas
 pip install pandas
-print(pandas.__version__)
-2.2.2
+python -c "import pandas as pd; print(pd.__version__)"  # Expected: 2.2.2
 
+# Install TiffFile
 pip install tifffile
-print(tifffile.__version__)
-2024.8.10
+python -c "import tifffile; print(tifffile.__version__)"  # Expected: 2024.8.10
 
+# Install Scikit-Image
 pip install scikit-image
-print(skimage.__version__)
-0.24.0
+python -c "import skimage; print(skimage.__version__)"  # Expected: 0.24.0
 
+# Install Matplotlib
 pip install matplotlib
-print(matplotlib.__version__)
-3.9.2
+python -c "import matplotlib; print(matplotlib.__version__)"  # Expected: 3.9.2
 
+# Install Scikit-Learn
 pip install scikit-learn
-print(sklearn.__version__)
-1.5.1
+python -c "import sklearn; print(sklearn.__version__)"  # Expected: 1.5.1
 
+# Install Seaborn
 pip install seaborn
-print(seaborn.__version__)
-0.13.2
+python -c "import seaborn as sns; print(sns.__version__)"  # Expected: 0.13.2
 
+# Install UMAP-learn
 pip install umap-learn
-print(umap.__version__)
-0.5.6
+python -c "import umap; print(umap.__version__)"  # Expected: 0.5.6
 
+# Install HDBSCAN
 pip install hdbscan
-pip show hdbscan
-Name: hdbscan
-Version: 0.8.38.post1
+pip show hdbscan | grep Version  # Expected: 0.8.38.post1
 
+# Install Datashader
 pip install datashader
-Version: 0.16.3
+pip show datashader | grep Version  # Expected: 0.16.3
 
+# Install Bokeh
 pip install bokeh
-Version: 3.5.1
+pip show bokeh | grep Version  # Expected: 3.5.1
 
+# Install HoloViews
 pip install holoviews
-Version: 1.19.1
+pip show holoviews | grep Version  # Expected: 1.19.1
 
+## Downloading and Running Files
 
-
-## To Downnload the files:
 
 ![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
 
