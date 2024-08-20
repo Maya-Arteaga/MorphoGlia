@@ -5,7 +5,7 @@
 - [III) Methodology](#III-methodology)
 
 
-
+![Graph_Abstract2](https://github.com/user-attachments/assets/c4b873ca-26cf-4715-b6ac-5041d964039a)
 
 
 # I) Introduction
@@ -118,7 +118,7 @@ Alternatively, you can run the interface from a Python IDE by opening the Morpho
 
 # III) Methodology
 
-![Graph_Abstract2](https://github.com/user-attachments/assets/c4b873ca-26cf-4715-b6ac-5041d964039a)
+
 
 
 
