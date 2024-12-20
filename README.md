@@ -34,6 +34,11 @@ Ensure you have **Python 3.10.14** installed. You can use a terminal or an Integ
 To ensure compatibility, install the following libraries and verify their versions:
 
 ```bash
+#One-step installation:
+pip install -r requirements.txt
+
+#otherwise, you can install each library
+
 # Install OpenCV
 pip install opencv-python
 python -c "import cv2; print(cv2.__version__)"  # Expected: 4.10.0
