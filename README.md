@@ -40,53 +40,54 @@ pip install -r requirements.txt
 #Manual Installation (If the above fails)
 #If you encounter issues with the one-step installation, install each library individually:
 
-# Install OpenCV
-pip install opencv-python
-python -c "import cv2; print(cv2.__version__)"  # Expected: 4.10.0
+# Install OpenCV (version 4.10.0)
+pip install opencv-python==4.10.0
+python -c "import cv2; print(cv2.__version__)"  # Verify installation (expected version: 4.10.0)
 
-# Install Pandas
-pip install pandas
-python -c "import pandas as pd; print(pd.__version__)"  # Expected: 2.2.2
+# Install Pandas (version 2.2.2)
+pip install pandas==2.2.2
+python -c "import pandas as pd; print(pd.__version__)"  # Verify installation (expected version: 2.2.2)
 
-# Install TiffFile
-pip install tifffile
-python -c "import tifffile; print(tifffile.__version__)"  # Expected: 2024.8.10
+# Install TiffFile (version 2024.8.10)
+pip install tifffile==2024.8.10
+python -c "import tifffile; print(tifffile.__version__)"  # Verify installation (expected version: 2024.8.10)
 
-# Install Scikit-Image
-pip install scikit-image
-python -c "import skimage; print(skimage.__version__)"  # Expected: 0.24.0
+# Install Scikit-Image (version 0.24.0)
+pip install scikit-image==0.24.0
+python -c "import skimage; print(skimage.__version__)"  # Verify installation (expected version: 0.24.0)
 
-# Install Matplotlib
-pip install matplotlib
-python -c "import matplotlib; print(matplotlib.__version__)"  # Expected: 3.9.2
+# Install Matplotlib (version 3.9.2)
+pip install matplotlib==3.9.2
+python -c "import matplotlib; print(matplotlib.__version__)"  # Verify installation (expected version: 3.9.2)
 
-# Install Scikit-Learn
-pip install scikit-learn
-python -c "import sklearn; print(sklearn.__version__)"  # Expected: 1.5.1
+# Install Scikit-Learn (version 1.5.1)
+pip install scikit-learn==1.5.1
+python -c "import sklearn; print(sklearn.__version__)"  # Verify installation (expected version: 1.5.1)
 
-# Install Seaborn
-pip install seaborn
-python -c "import seaborn as sns; print(sns.__version__)"  # Expected: 0.13.2
+# Install Seaborn (version 0.13.2)
+pip install seaborn==0.13.2
+python -c "import seaborn as sns; print(sns.__version__)"  # Verify installation (expected version: 0.13.2)
 
-# Install UMAP-learn
-pip install umap-learn
-python -c "import umap; print(umap.__version__)"  # Expected: 0.5.6
+# Install UMAP-learn (version 0.5.6)
+pip install umap-learn==0.5.6
+python -c "import umap; print(umap.__version__)"  # Verify installation (expected version: 0.5.6)
 
-# Install HDBSCAN
-pip install hdbscan
-pip show hdbscan | grep Version  # Expected: 0.8.38.post1
+# Install HDBSCAN (version 0.8.38.post1)
+pip install hdbscan==0.8.38.post1
+pip show hdbscan | grep Version  # Verify installation (expected version: 0.8.38.post1)
 
-# Install Datashader
-pip install datashader
-pip show datashader | grep Version  # Expected: 0.16.3
+# Install Datashader (version 0.16.3)
+pip install datashader==0.16.3
+pip show datashader | grep Version  # Verify installation (expected version: 0.16.3)
 
-# Install Bokeh
-pip install bokeh
-pip show bokeh | grep Version  # Expected: 3.5.1
+# Install Bokeh (version 3.5.1)
+pip install bokeh==3.5.1
+pip show bokeh | grep Version  # Verify installation (expected version: 3.5.1)
 
-# Install HoloViews
-pip install holoviews
-pip show holoviews | grep Version  # Expected: 1.19.1
+# Install HoloViews (version 1.19.1)
+pip install holoviews==1.19.1
+pip show holoviews | grep Version  # Verify installation (expected version: 1.19.1)
+
 
 ```
 
