@@ -37,7 +37,8 @@ To ensure compatibility, install the following libraries and verify their versio
 #One-step installation:
 pip install -r requirements.txt
 
-#otherwise, you can install each library
+#Manual Installation (If the above fails)
+#If you encounter issues with the one-step installation, install each library individually:
 
 # Install OpenCV
 pip install opencv-python
