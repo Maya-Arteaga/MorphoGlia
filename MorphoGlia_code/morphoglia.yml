@@ -1,4 +1,4 @@
-name: morphoglia2.0
+name: morphoglia
 channels:
   - defaults
   - conda-forge
