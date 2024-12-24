@@ -41,7 +41,7 @@ pip install -r requirements.txt
 #If you encounter issues with the one-step installation, install each library individually:
 
 # Install OpenCV (version 4.10.0)
-pip install opencv-python==4.10.0
+conda install -c conda-forge opencv=4.10.0
 python -c "import cv2; print(cv2.__version__)"  # Verify installation (expected version: 4.10.0)
 
 # Install Pandas (version 2.2.2)
