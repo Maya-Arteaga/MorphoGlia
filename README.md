@@ -35,9 +35,9 @@ To ensure compatibility, install the following libraries and verify their versio
 
 ```bash
 #One-step installation:
-pip install -r requirements.txt
+conda env create -f morphoglia.yml
 
-#Manual Installation (If the above fails)
+#Manual Installation:
 #If you encounter issues with the one-step installation, install each library individually:
 
 # Install OpenCV (version 4.10.0)
