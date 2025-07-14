@@ -36,58 +36,37 @@ To ensure compatibility, install the following libraries and verify their versio
 ```bash
 #One-step installation:
 conda env create -f morphoglia.yml
+```
+Alternatively, you can install them manually by copying and pasting the following line into your terminal:
 
+```bash
 #Manual Installation:
 #If you encounter issues with the one-step installation, install each library individually:
 
-# Install OpenCV (version 4.10.0)
-conda install -c conda-forge opencv=4.10.0
-python -c "import cv2; print(cv2.__version__)"  # Verify installation (expected version: 4.10.0)
+# Step 1: Create a new Conda environment with Python 3.10.14
+conda create -n morpho_env python=3.10.14 -y
+conda activate morpho_env
 
-# Install Pandas (version 2.2.2)
-pip install pandas==2.2.2
-python -c "import pandas as pd; print(pd.__version__)"  # Verify installation (expected version: 2.2.2)
+# Step 2: Install OpenCV (via conda-forge for version control)
+conda install -c conda-forge opencv=4.10.0 -y
 
-# Install TiffFile (version 2024.8.10)
-pip install tifffile==2024.8.10
-python -c "import tifffile; print(tifffile.__version__)"  # Verify installation (expected version: 2024.8.10)
+# Step 3: Install the rest via pip in one line
+pip install \
+    pandas==2.2.2 \
+    tifffile==2024.8.10 \
+    scikit-image==0.24.0 \
+    matplotlib==3.9.2 \
+    scikit-learn==1.5.1 \
+    seaborn==0.13.2 \
+    umap-learn==0.5.6 \
+    hdbscan==0.8.38.post1 \
+    datashader==0.16.3 \
+    bokeh==3.5.1 \
+    holoviews==1.19.1
 
-# Install Scikit-Image (version 0.24.0)
-pip install scikit-image==0.24.0
-python -c "import skimage; print(skimage.__version__)"  # Verify installation (expected version: 0.24.0)
 
-# Install Matplotlib (version 3.9.2)
-pip install matplotlib==3.9.2
-python -c "import matplotlib; print(matplotlib.__version__)"  # Verify installation (expected version: 3.9.2)
-
-# Install Scikit-Learn (version 1.5.1)
-pip install scikit-learn==1.5.1
-python -c "import sklearn; print(sklearn.__version__)"  # Verify installation (expected version: 1.5.1)
-
-# Install Seaborn (version 0.13.2)
-pip install seaborn==0.13.2
-python -c "import seaborn as sns; print(sns.__version__)"  # Verify installation (expected version: 0.13.2)
-
-# Install UMAP-learn (version 0.5.6)
-pip install umap-learn==0.5.6
-python -c "import umap; print(umap.__version__)"  # Verify installation (expected version: 0.5.6)
-
-# Install HDBSCAN (version 0.8.38.post1)
-pip install hdbscan==0.8.38.post1
-pip show hdbscan | grep Version  # Verify installation (expected version: 0.8.38.post1)
-
-# Install Datashader (version 0.16.3)
-pip install datashader==0.16.3
-pip show datashader | grep Version  # Verify installation (expected version: 0.16.3)
-
-# Install Bokeh (version 3.5.1)
-pip install bokeh==3.5.1
-pip show bokeh | grep Version  # Verify installation (expected version: 3.5.1)
-
-# Install HoloViews (version 1.19.1)
-pip install holoviews==1.19.1
-pip show holoviews | grep Version  # Verify installation (expected version: 1.19.1)
-
+#Verify correct installation
+python -c "import cv2, pandas as pd, tifffile, skimage, matplotlib, sklearn, seaborn as sns, umap, hdbscan, datashader, bokeh, holoviews; print('✔', cv2.__version__, pd.__version__, tifffile.__version__, skimage.__version__, matplotlib.__version__, sklearn.__version__, sns.__version__, umap.__version__, hdbscan.__version__, datashader.__version__, bokeh.__version__, holoviews.__version__)"
 
 ```
 
