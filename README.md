@@ -60,6 +60,13 @@ After unzipping the repository:
 
    ```bash
    cd ~/Downloads/MorphoGlia-main/MorphoGlia_Interface
+  ```
+
+5. Create the environment by running:
+
+      ```bash
+   conda env create -f morphoglia.yml
+  ```
 
 
 
