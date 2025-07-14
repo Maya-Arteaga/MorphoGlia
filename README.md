@@ -68,6 +68,38 @@ After unzipping the repository:
    conda env create -f morphoglia.yml
 ```
 
+6. Verify the environment was created:
+
+```bash
+   conda env list
+```
+You should see morphoglia listed in the output.
+
+
+### 3) Activate the environment
+
+Activate the newly created environment by running:
+
+```bash
+   conda activate morphoglia
+```
+If successful, your terminal prompt should now show (morphoglia).
+
+### 4) Launch the Interface
+
+Once inside the morphoglia environment, navigate to the interface folder (if not already there):
+
+
+```bash
+   cd ~/Downloads/MorphoGlia-main/MorphoGlia_Interface
+```
+Then run:
+
+```bash
+   python main.py
+```
+
+This will launch the MorphoGlia graphical interface.
 
 
 ![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
