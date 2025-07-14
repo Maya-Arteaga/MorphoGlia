@@ -7,7 +7,7 @@
     - [2) Install dependencies via Conda](#2-install-dependencies-via-conda)
     - [3) Activate the environment](#3-activate-the-environment)
     - [4) Launch the interface](#4-launch-the-interface)
-  - [B) Code Mode (For Developers)](#b-code-mode-for-developers)
+  - [B) Code Mode (For Tunning)](#b-code-mode-for-Tunning)
   - [C) App Mode (Executable, under repair)](#c-app-mode-executable-under-repair)
 
 
@@ -141,7 +141,7 @@ Once inside the morphoglia environment, navigate to the interface folder (if not
 Then run:
 
 ```bash
-   python main.py
+   python Morphoglia_app.py
 ```
 
 This will launch the MorphoGlia graphical interface.
