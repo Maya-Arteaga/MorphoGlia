@@ -44,13 +44,15 @@ Alternatively, you can install them manually by copying and pasting the followin
 #If you encounter issues with the one-step installation, install each library individually:
 
 # Step 1: Create a new Conda environment with Python 3.10.14
-conda create -n morpho_env python=3.10.14 -y
-conda activate morpho_env
+conda create -n morphoglia python=3.10.14 -y
 
-# Step 2: Install OpenCV (via conda-forge for version control)
+# Step 2: Activate the new enviroment
+conda activate morphoglia
+
+# Step 3: Install OpenCV (via conda-forge for version control)
 conda install -c conda-forge opencv=4.10.0 -y
 
-# Step 3: Install the rest via pip in one line
+# Step 4: Install the rest via pip in one line
 pip install \
     pandas==2.2.2 \
     tifffile==2024.8.10 \
@@ -65,7 +67,7 @@ pip install \
     holoviews==1.19.1
 
 
-#Verify correct installation
+# Step 5: Verify correct installation
 python -c "import cv2, pandas as pd, tifffile, skimage, matplotlib, sklearn, seaborn as sns, umap, hdbscan, datashader, bokeh, holoviews; print('✔', cv2.__version__, pd.__version__, tifffile.__version__, skimage.__version__, matplotlib.__version__, sklearn.__version__, sns.__version__, umap.__version__, hdbscan.__version__, datashader.__version__, bokeh.__version__, holoviews.__version__)"
 
 ```
