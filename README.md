@@ -64,7 +64,7 @@ After unzipping the repository:
 
 5. Create the environment by running:
 
-      ```bash
+  ```bash
    conda env create -f morphoglia.yml
   ```
 
