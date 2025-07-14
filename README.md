@@ -37,11 +37,11 @@ To ensure compatibility, install the following libraries and verify their versio
 #One-step installation:
 conda env create -f morphoglia.yml
 ```
-Alternatively, you can install them manually by copying and pasting the following line into your terminal:
+**Manual Installation:**
+If you encounter issues with the one-line installation, you can install the libraries manually. Just copy and paste the following commands into your terminal one by one, skipping any lines that start with # (comments). Make sure Conda is already installed.
 
 ```bash
 #Manual Installation:
-#If you encounter issues with the one-step installation, install each library individually:
 
 # Step 1: Create a new Conda environment with Python 3.10.14
 conda create -n morphoglia python=3.10.14 -y
