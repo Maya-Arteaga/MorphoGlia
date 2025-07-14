@@ -2,7 +2,7 @@
 
 - [I) Introduction](#i-introduction)
 - [II) How to Start Using MorphoGlia](#ii-how-to-start-using-morphoglia)
-  - [A) Interface Mode (Recommended)](#a-interface-mode-recommended)
+  - [A) Interface Mode (user-friendly)](#a-interface-mode-user-friendly)
     - [1) Download the repository](#1-download-the-repository)
     - [2) Install dependencies via Conda](#2-install-dependencies-via-conda)
     - [3) Activate the environment](#3-activate-the-environment)
@@ -35,7 +35,7 @@ Currently, the software is available **for Macs with M1/M2 processors**. We are 
 
 
 
-## A) Interface Mode (Recommended)
+## A) Interface Mode (user-friendly)
 
 This is the most user-friendly way to run MorphoGlia using its graphical interface. It is ideal for new users and does not require writing any code.
 
