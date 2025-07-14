@@ -68,6 +68,47 @@ After unzipping the repository:
    conda env create -f morphoglia.yml
 ```
 
+
+If you encounter issues with the one-step installation, you can install each library manually
+
+**Manual Installation:**
+If you encounter issues with the one-line installation, you can install the libraries manually. Just copy and paste the following commands into your terminal one by one, skipping any lines that start with # (comments). Make sure Conda is already installed.
+
+```bash
+#Manual Installation:
+
+# Step 1: Create a new Conda environment with Python 3.10.14
+conda create -n morphoglia python=3.10.14 -y
+
+# Step 2: Activate the new enviroment
+conda activate morphoglia
+
+# Step 3: Install OpenCV (via conda-forge for version control)
+conda install -c conda-forge opencv=4.10.0 -y
+
+# Step 4: Install the rest via pip in one line
+pip install \
+    pandas==2.2.2 \
+    tifffile==2024.8.10 \
+    scikit-image==0.24.0 \
+    matplotlib==3.9.2 \
+    scikit-learn==1.5.1 \
+    seaborn==0.13.2 \
+    umap-learn==0.5.6 \
+    hdbscan==0.8.38.post1 \
+    datashader==0.16.3 \
+    bokeh==3.5.1 \
+    holoviews==1.19.1
+
+
+# Step 5: Verify correct installation
+python -c "import cv2, pandas as pd, tifffile, skimage, matplotlib, sklearn, seaborn as sns, umap, hdbscan, datashader, bokeh, holoviews; print('✔', cv2.__version__, pd.__version__, tifffile.__version__, skimage.__version__, matplotlib.__version__, sklearn.__version__, sns.__version__, umap.__version__, hdbscan.__version__, datashader.__version__, bokeh.__version__, holoviews.__version__)"
+
+```
+
+
+
+
 6. Verify the environment was created:
 
 ```bash
