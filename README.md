@@ -47,6 +47,9 @@ This is the most user-friendly way to run MorphoGlia using its graphical interfa
 3. Select **"Download ZIP"**.  
 4. Unzip the downloaded file to a location of your choice.
 
+
+
+![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
 ---
 
 ### 2) Install dependencies via Conda
@@ -141,10 +144,6 @@ Then run:
 ```
 
 This will launch the MorphoGlia graphical interface.
-
-
-![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
-
 
 
 
