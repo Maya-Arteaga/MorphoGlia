@@ -58,15 +58,15 @@ After unzipping the repository:
 3. Make sure you have [Conda](https://docs.conda.io/en/latest/miniconda.html) installed.
 4. Navigate to the folder containing the `.yml` file. Example:
 
-   ```bash
+ ```bash
    cd ~/Downloads/MorphoGlia-main/MorphoGlia_Interface
-  ```
+```
 
 5. Create the environment by running:
 
-  ```bash
+```bash
    conda env create -f morphoglia.yml
-  ```
+```
 
 
 
