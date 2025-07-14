@@ -75,7 +75,7 @@ If you encounter issues with the one-step installation, you can install each lib
 If you encounter issues with the one-line installation, you can install the libraries manually. Just copy and paste the following commands into your terminal one by one, skipping any lines that start with # (comments). Make sure Conda is already installed.
 
 ```bash
-#Manual Installation:
+# Manual Installation:
 
 # Step 1: Create a new Conda environment with Python 3.10.14
 conda create -n morphoglia python=3.10.14 -y
