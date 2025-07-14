@@ -37,6 +37,8 @@ To ensure compatibility, install the following libraries and verify their versio
 #One-step installation:
 conda env create -f morphoglia.yml
 ```
+If you encounter issues with the one-step installation, you can install each library manually
+
 **Manual Installation:**
 If you encounter issues with the one-line installation, you can install the libraries manually. Just copy and paste the following commands into your terminal one by one, skipping any lines that start with # (comments). Make sure Conda is already installed.
 
