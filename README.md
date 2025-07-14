@@ -1,7 +1,15 @@
 # MorphoGlia: Clustering and Mapping Microglia Morphology
 
-- [I) Introduction](#I-introduction)
-- [II) How to Install MorphoGlia](#II-how-to-start-using-MorphoGlia)
+- [I) Introduction](#i-introduction)
+- [II) How to Start Using MorphoGlia](#ii-how-to-start-using-morphoglia)
+  - [A) Interface Mode (Recommended)](#a-interface-mode-recommended)
+    - [1) Download the repository](#1-download-the-repository)
+    - [2) Install dependencies via Conda](#2-install-dependencies-via-conda)
+    - [3) Activate the environment](#3-activate-the-environment)
+    - [4) Launch the interface](#4-launch-the-interface)
+  - [B) Code Mode (For Developers)](#b-code-mode-for-developers)
+  - [C) App Mode (Executable, under repair)](#c-app-mode-executable-under-repair)
+
 
 
 ![Graph_Abstract2](https://github.com/user-attachments/assets/c4b873ca-26cf-4715-b6ac-5041d964039a)
@@ -25,79 +33,40 @@ Currently, the software is available **for Macs with M1/M2 processors**. We are 
 
 # II) How to start using MorphoGlia
 
-## 1) Python Environment Setup
-
-Ensure you have **Python 3.10.14** installed. You can use a terminal or an Integrated Development Environment (IDE) such as Spyder, PyCharm, or Visual Studio.
-
-## 2) Install Required Libraries
-
-To ensure compatibility, install the following libraries and verify their versions:
-
-```bash
-#One-step installation:
-conda env create -f morphoglia.yml
-```
-If you encounter issues with the one-step installation, you can install each library manually
-
-**Manual Installation:**
-If you encounter issues with the one-line installation, you can install the libraries manually. Just copy and paste the following commands into your terminal one by one, skipping any lines that start with # (comments). Make sure Conda is already installed.
-
-```bash
-#Manual Installation:
-
-# Step 1: Create a new Conda environment with Python 3.10.14
-conda create -n morphoglia python=3.10.14 -y
-
-# Step 2: Activate the new enviroment
-conda activate morphoglia
-
-# Step 3: Install OpenCV (via conda-forge for version control)
-conda install -c conda-forge opencv=4.10.0 -y
-
-# Step 4: Install the rest via pip in one line
-pip install \
-    pandas==2.2.2 \
-    tifffile==2024.8.10 \
-    scikit-image==0.24.0 \
-    matplotlib==3.9.2 \
-    scikit-learn==1.5.1 \
-    seaborn==0.13.2 \
-    umap-learn==0.5.6 \
-    hdbscan==0.8.38.post1 \
-    datashader==0.16.3 \
-    bokeh==3.5.1 \
-    holoviews==1.19.1
 
 
-# Step 5: Verify correct installation
-python -c "import cv2, pandas as pd, tifffile, skimage, matplotlib, sklearn, seaborn as sns, umap, hdbscan, datashader, bokeh, holoviews; print('✔', cv2.__version__, pd.__version__, tifffile.__version__, skimage.__version__, matplotlib.__version__, sklearn.__version__, sns.__version__, umap.__version__, hdbscan.__version__, datashader.__version__, bokeh.__version__, holoviews.__version__)"
+## A) Interface Mode (Recommended)
 
-```
+This is the most user-friendly way to run MorphoGlia using its graphical interface. It is ideal for new users and does not require writing any code.
 
-## 3) Downloading and Running Files
+### 1) Download the repository
+
+1. Visit the repository:  
+   https://github.com/Maya-Arteaga/MorphoGlia  
+2. Click the green **"Code"** button at the top right.  
+3. Select **"Download ZIP"**.  
+4. Unzip the downloaded file to a location of your choice.
+
+---
+
+### 2) Install dependencies via Conda
+
+After unzipping the repository:
+
+1. Locate the file named `morphoglia.yml` inside the folder.
+2. Open a terminal (see below).
+3. Make sure you have [Conda](https://docs.conda.io/en/latest/miniconda.html) installed.
+4. Navigate to the folder containing the `.yml` file. Example:
+
+   ```bash
+   cd ~/Downloads/MorphoGlia-main/MorphoGlia_Interface
+
 
 
 ![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
 
 
-**a)** Open the `MorphoGlia-main` folder and move the `MorphoGlia_Interface` folder to your Desktop.
 
-**b)** Open your terminal and navigate to the directory containing the `Morphoglia_Interface` files. For example:
-
-Locate on the directory "Morphoglia_Interface". For example:
-```bash
-cd Desktop/Morphoglia_Interface
-```
-
-**c)** Run the interface using the following command:
-
-```bash
-python Morphoglia_app.py
-```
-
-This will start and display the interface mode. 
-
-Alternatively, you can run the interface from a Python IDE by opening the Morphoglia_app.py file and executing it.
 
 ![Gif_python](https://github.com/user-attachments/assets/5afc5741-8a9f-4189-8bb3-7d98716225ac)
 
