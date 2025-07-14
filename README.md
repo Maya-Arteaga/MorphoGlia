@@ -119,6 +119,7 @@ python -c "import cv2, pandas as pd, tifffile, skimage, matplotlib, sklearn, sea
 ```
 You should see morphoglia listed in the output.
 
+![2_install](https://github.com/user-attachments/assets/bdbb45d5-76f1-44de-915b-26c82dab976a)
 
 ### 3) Activate the environment
 
