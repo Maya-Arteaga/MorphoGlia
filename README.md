@@ -1,164 +1,427 @@
-# MorphoGlia: Clustering and Mapping Microglia Morphology
+# MorphoGlia 2.0.0
 
-- [I) Introduction](#i-introduction)
-- [II) How to Start Using MorphoGlia](#ii-how-to-start-using-morphoglia)
-  - [A) Interface Mode (user-friendly)](#a-interface-mode-user-friendly)
-    - [1) Download the repository](#1-download-the-repository)
-    - [2) Install dependencies via Conda](#2-install-dependencies-via-conda)
-    - [3) Activate the environment](#3-activate-the-environment)
-    - [4) Launch the interface](#4-launch-the-interface)
-  - [B) Code Mode (For Tunning)](#b-code-mode-for-Tunning)
-  - [C) App Mode (Executable, under repair)](#c-app-mode-executable-under-repair)
+**MorphoGlia** is a cell-morphology analysis pipeline for image preprocessing,
+instance segmentation/postprocessing, morphometrics, morphology-state
+estimation, tissue mapping, and visualization.
 
+MorphoGlia 2.0.0 provides two interfaces over the same analysis backend:
 
+- **GUI** — recommended for most users.
+- **`mg_script.py`** — explicit, reproducible configuration in Python.
 
-![Graph_Abstract2](https://github.com/user-attachments/assets/c4b873ca-26cf-4715-b6ac-5041d964039a)
+The release uses a locked **Pixi** environment. Users do not need to manually
+assemble a Python or Conda environment.
 
+**License:** Apache License 2.0.
 
-# I) Introduction
+## Citation
 
+If you use **MorphoGlia** in your research, please cite:
 
-MorphoGlia has been developed with a focus on user-friendliness and accessibility, making it an ideal tool for the broader scientific community. The software is available in two main modes: a software mode and an interface mode, both designed to facilitate ease of use. The executable file was generated using PyInstaller (https://pyinstaller.org/en/stable/), while the interactive interface was built using the Tkinter Python library (https://docs.python.org/3/library/tkinter.html).
-For advanced users, direct modification of the source code is recommended to tailor the application to the specific needs of individual experiments. This approach allows for greater flexibility and customization, ensuring that MorphoGlia can be adapted to a wide range of research scenarios.
+> Maya-Arteaga JP, Martínez-Orozco H, Diaz-Cintra S (2024).  
+> **MorphoGlia, an interactive method to identify and map microglia morphologies, demonstrates differences in hippocampal subregions of an Alzheimer's disease mouse model.**  
+> *Frontiers in Cellular Neuroscience* 18:1505048.  
+> https://doi.org/10.3389/fncel.2024.1505048
 
-To use the **interface mode**, download the MorphoGlia_Interface directory. You can run it from the terminal or through a Python interface. Ensure that the files MorphoGlia_app.py and morphoglia.py are located in the same directory. You will need to install the necessary libraries.
+BibTeX:
 
-The **executable mode** is available for download at the following link: https://drive.google.com/drive/u/1/folders/15Mu2THZvVH6OTlDZuzf7ftsWyLAiWjUV
-
-The **source code** is located in the MorphoGlia_code directory. This directory includes the interactive mode for point tracking, color mapping to customize cluster colors, and the R and Python scripts needed to reproduce the graphics.
-
-Also, check out the video **"MorphoGlia Tutorial" on YouTube** for an example of how to use the MorphoGlia software: https://www.youtube.com/watch?v=OLLS9I8ln48&t=17s
-
-Currently, the software is available **for Macs with M1/M2 processors**. We are working on versions for Intel-based Macs and Windows.
-
-# II) How to start using MorphoGlia
-
-
-
-## A) Interface Mode (user-friendly)
-
-This is the most user-friendly way to run MorphoGlia using its graphical interface. It is ideal for new users and does not require writing any code.
-
-### 1) Download the repository
-
-1. Visit the repository:  
-   https://github.com/Maya-Arteaga/MorphoGlia  
-2. Click the green **"Code"** button at the top right.  
-3. Select **"Download ZIP"**.  
-4. Unzip the downloaded file to a location of your choice.
-
-
-
-![Download_4](https://github.com/user-attachments/assets/c497a4b7-8846-4a6f-996d-b3cd9ab5e38d)
----
-
-### 2) Install dependencies via Conda
-
-After unzipping the repository:
-
-1. Locate the file named `morphoglia.yml` inside the folder.
-2. Open a terminal (see below).
-3. Make sure you have [Conda](https://docs.conda.io/en/latest/miniconda.html) installed.
-4. Navigate to the folder containing the `.yml` file. Example:
-
- ```bash
-   cd ~/Downloads/MorphoGlia-main/MorphoGlia_Interface
+```bibtex
+@article{MayaArteaga2024MorphoGlia,
+  author  = {Maya-Arteaga, Juan Pablo and Martínez-Orozco, Humberto and Diaz-Cintra, Sofía},
+  title   = {MorphoGlia, an interactive method to identify and map microglia morphologies, demonstrates differences in hippocampal subregions of an Alzheimer's disease mouse model},
+  journal = {Frontiers in Cellular Neuroscience},
+  volume  = {18},
+  pages   = {1505048},
+  year    = {2024},
+  doi     = {10.3389/fncel.2024.1505048}
+}
 ```
 
-5. Create the environment by running:
+## Implementation
+
+MorphoGlia implements an end-to-end, provenance-aware workflow in which image
+processing, instance establishment/refinement, morphometric measurement,
+latent-space estimation, multiresolution morphology-state inference, mapping,
+and visualization are performed through a common configuration object. The GUI
+and `mg_script.py` therefore execute the same scientific backend rather than
+separate analysis implementations. Stage outputs are checkpointed and can be
+reused when their inputs and configuration remain compatible, while the
+Technical Record preserves the effective analytical settings used for each run.
+
+The analytical workflow is deliberately unsupervised with respect to biological
+group labels. Experimental categories are used for organization and downstream
+comparison/visualization, but they are not used to discover the morphology
+states.
+
+### Methods-ready description
+
+The following text is intended as a **methods template**. It is written in a
+paper-style narrative so that users can copy it into a Methods section and
+replace the bracketed fields according to the analysis performed.
+
+> **A concise methods description of the MorphoGlia pipeline is provided below.
+> Replace the bracketed fields according to the analysis performed.**
+>
+> Cell morphology was analyzed using MorphoGlia (v2.0.0; Maya-Arteaga et al.,
+> 2024). Images were provided as **[raw fluorescence images / binary masks /
+> pre-labeled instance images]**. **[For raw images: preprocessing was performed
+> using the MG1/MG2/MG3/MG4 preset; insert the corresponding preprocessing
+> description.]** **[If used: instances were further refined to remove small
+> objects, reconnect tubular fragments, and/or separate candidate overlapping
+> cells.]** Each cell was represented by a multidimensional morphometric profile
+> integrating whole-cell geometry, convex-hull and soma measurements, skeleton
+> and branch topology, Sholl analysis, branch order, and tortuosity-related
+> features.
+>
+> Cells from all experimental groups were then pooled to construct a **shared
+> latent morphological space**, without using experimental labels to define its
+> structure. PCA was applied to the morphometric matrix, and plausible
+> dimensionalities were determined using Parallel Analysis (500 permutations;
+> 95th-percentile threshold) and the Broken-Stick criterion, with Two-NN
+> intrinsic dimensionality retained as an independent diagnostic. Within this
+> latent space, morphological states were identified using a **multiresolution
+> Gaussian mixture modeling framework**. Candidate numbers of states, PCA
+> dimensionalities, and covariance structures were systematically evaluated,
+> with covariance models selected by Bayesian information criterion (BIC).
+> Partition robustness was assessed across 50 stratified subsamples containing
+> 80% of the cells using adjusted Rand index (ARI), cross-dimensional agreement,
+> membership probability, and minimum state size. This stability landscape was
+> used to identify reproducible morphological resolutions independently of
+> experimental labels. **[The automatically selected supported solution / a
+> supported solution with K = ___ morphological states]** was retained for
+> downstream analysis, with cell-level consensus reliability estimated across
+> 100 iterations. Only after morphological states had been defined were
+> **[experimental categories / conditions / treatments / regions]** introduced
+> for statistical comparison, thereby separating morphology-state discovery
+> from biological interpretation.
+
+For raw images, replace the preprocessing placeholder with the sentence
+corresponding to the preset that was actually used:
+
+- **MG1:** Raw fluorescence images were robustly intensity-rescaled, corrected
+  by percentile background subtraction, rescaled, corrected by Gaussian
+  background subtraction, enhanced using directional grayscale opening,
+  rescaled again, binarized using Li thresholding, and filtered to remove small
+  noise and compact objects.
+- **MG2:** Raw fluorescence images were robustly intensity-rescaled, corrected
+  by percentile and Gaussian background subtraction, enhanced using directional
+  grayscale opening, rescaled, binarized using Li thresholding, and filtered to
+  remove small noise.
+- **MG3:** Raw fluorescence images were robustly intensity-rescaled, corrected
+  by Gaussian background subtraction, binarized using Li thresholding, and
+  filtered to remove small noise.
+- **MG4:** Raw fluorescence images were corrected by percentile background
+  subtraction, robustly intensity-rescaled, binarized using Li thresholding, and
+  filtered to remove small noise.
+
+Users should report the preprocessing, refinement, scaling, clustering,
+morphology-state, and plotting settings used in their analysis. The run-specific Technical Record is intended to provide the exact
+configuration needed to complete or verify the Methods description.
+
+## Download
+
+Download `MorphoGlia_2.0.0.zip` from the **Releases** section of:
+
+https://github.com/Maya-Arteaga/MorphoGlia
+
+Extract the complete folder before running MorphoGlia. Do not run files from
+inside the ZIP.
+
+A convenient location is:
+
+```text
+macOS:   ~/Desktop/MorphoGlia_2.0.0
+Windows: C:\Users\YOUR_NAME\Desktop\MorphoGlia_2.0.0
+```
+
+Keep the release folder together.
+
+## GUI installation
+
+### macOS
+
+**First use:** double-click `Install MorphoGlia.command`.
+
+The installer finds or installs Pixi, installs the locked environment, runs the
+compatibility checks, creates `MorphoGlia.app`, and opens the GUI.
+
+If macOS blocks the unsigned installer, right-click it, choose **Open**, then
+confirm **Open**.
+
+**Normal use:** double-click `MorphoGlia.app`.
+
+`MorphoGlia.command` is included as a fallback launcher.
+
+### Windows
+
+MorphoGlia 2.0.0 currently targets **Windows x86-64** (Intel/AMD).
+
+**First use:** double-click `Install MorphoGlia.bat`.
+
+The installer can keep Pixi locally inside the MorphoGlia folder, so users do
+not need a separate Python or Conda installation.
+
+**Normal use:** double-click `MorphoGlia.bat`.
+
+### Linux
+
+From a terminal inside the extracted release folder:
 
 ```bash
-   conda env create -f morphoglia.yml
+chmod +x install_morphoglia.sh
+./install_morphoglia.sh
 ```
 
-
-If you encounter issues with the one-step installation, you can install each library manually
-
-**Manual Installation:**
-If you encounter issues with the one-line installation, you can install the libraries manually. Just copy and paste the following commands into your terminal one by one, skipping any lines that start with # (comments). Make sure Conda is already installed.
+Later:
 
 ```bash
-# Manual Installation:
-
-# Step 1: Create a new Conda environment with Python 3.10.14
-conda create -n morphoglia python=3.10.14 -y
-
-# Step 2: Activate the new enviroment
-conda activate morphoglia
-
-# Step 3: Install OpenCV (via conda-forge for version control)
-conda install -c conda-forge opencv=4.10.0 -y
-
-# Step 4: Install the rest via pip in one line
-pip install \
-    pandas==2.2.2 \
-    tifffile==2024.8.10 \
-    scikit-image==0.24.0 \
-    matplotlib==3.9.2 \
-    scikit-learn==1.5.1 \
-    seaborn==0.13.2 \
-    umap-learn==0.5.6 \
-    hdbscan==0.8.38.post1 \
-    datashader==0.16.3 \
-    bokeh==3.5.1 \
-    holoviews==1.19.1
-
-
-# Step 5: Verify correct installation
-python -c "import cv2, pandas as pd, tifffile, skimage, matplotlib, sklearn, seaborn as sns, umap, hdbscan, datashader, bokeh, holoviews; print('✔', cv2.__version__, pd.__version__, tifffile.__version__, skimage.__version__, matplotlib.__version__, sklearn.__version__, sns.__version__, umap.__version__, hdbscan.__version__, datashader.__version__, bokeh.__version__, holoviews.__version__)"
-
+pixi run gui
 ```
 
+## Basic GUI workflow
 
+1. Choose the folder containing the TIFF images.
+2. Enter the microscope pixel size in µm/pixel.
+3. Choose 2D or 3D biological image geometry.
+4. Choose **Raw**, **Binary**, or **Labels** input.
+5. For Raw input, choose preprocessing preset **MG1–MG4**.
+6. Define filename nomenclature.
+7. Enable the stages that should be recomputed.
+8. If Category is enabled, choose the metadata fields defining categories.
+9. After Dimensionality Reduction and Clustering has been estimated, use the
+   automatic preferred morphology-state solution or choose one of the supported
+   resolutions.
+10. Choose plot DPI and morphology-state palette.
+11. Press **Run**.
 
+Outputs are written under:
 
-6. Verify the environment was created:
+```text
+YOUR_DATASET/
+└── _MorphoGlia/
+```
+
+Original source images are not renamed or overwritten.
+
+## Resume
+
+**Resume checked:** reuse compatible completed work when possible.
+
+**Resume unchecked:** recompute enabled stages and replace their generated
+outputs.
+
+A downstream stage may reuse a compatible prerequisite from an earlier run. If
+a required prerequisite is unavailable, that stage is skipped.
+
+## Raw preprocessing presets
+
+- **MG1** — full MorphoGlia fluorescence workflow.
+- **MG2** — background subtraction plus directional enhancement workflow.
+- **MG3** — robust-rescale/Gaussian-subtraction/Li-threshold workflow.
+- **MG4** — percentile-background/rescale/Li-threshold workflow.
+
+MG1 is the default full workflow. Preset suitability is dataset-dependent;
+inspect preprocessing output/QC rather than treating a preset as a biological
+assumption.
+
+# Script interface: `mg_script.py`
+
+Run the script **from the extracted MorphoGlia release folder**, because Pixi
+uses `pixi.toml` and `pixi.lock` from that directory.
+
+### macOS
 
 ```bash
-   conda env list
+cd ~/Desktop/MorphoGlia_2.0.0
+pixi run python mg_script.py
 ```
-You should see morphoglia listed in the output.
 
-![2_install](https://github.com/user-attachments/assets/bdbb45d5-76f1-44de-915b-26c82dab976a)
-
-### 3) Activate the environment
-
-Activate the newly created environment by running:
+If Pixi was installed by the macOS installer but is not on PATH:
 
 ```bash
-   conda activate morphoglia
+cd ~/Desktop/MorphoGlia_2.0.0
+~/.pixi/bin/pixi run python mg_script.py
 ```
-If successful, your terminal prompt should now show (morphoglia).
 
-### 4) Launch the Interface
+### Windows PowerShell
 
-Once inside the morphoglia environment, navigate to the interface folder (if not already there):
+```powershell
+cd "$HOME\Desktop\MorphoGlia_2.0.0"
+```
 
+With global Pixi:
+
+```powershell
+pixi run python .\mg_script.py
+```
+
+With local Pixi created by the MorphoGlia installer:
+
+```powershell
+.\.pixi-home\bin\pixi.exe run python .\mg_script.py
+```
+
+### Linux
 
 ```bash
-   cd ~/Downloads/MorphoGlia-main/MorphoGlia_Interface
+cd ~/Desktop/MorphoGlia_2.0.0
+pixi run python mg_script.py
 ```
-Then run:
+
+You can also use:
 
 ```bash
-   python Morphoglia_app.py
+pixi run script
 ```
 
-This will launch the MorphoGlia graphical interface.
+## Editing `mg_script.py`
 
+Change:
 
+```python
+INPUT_DIR = Path("/path/to/directory")
+```
 
-![Gif_python](https://github.com/user-attachments/assets/5afc5741-8a9f-4189-8bb3-7d98716225ac)
+to your dataset directory, then set the real microscope calibration:
 
+```python
+config.metadata.microns_per_pixel = 0.227
+```
 
+Choose input type:
 
+```python
+config.preprocessing.input_mode = "binary"
+```
 
+Valid values are `"raw"`, `"binary"`, and `"labels"`.
 
+For Raw input:
 
+```python
+config.preprocessing.preset = "mg1"
+```
 
+with `mg1`, `mg2`, `mg3`, or `mg4`.
 
+A stage setting such as:
 
+```python
+config.run.segmentation = True
+```
 
+means **recompute that stage**. `False` means do not recompute it; compatible
+saved prerequisites may still be reused.
 
+Spatial Analysis is intentionally not part of the public 2.0.0 release.
 
+## Filename nomenclature
 
+Positions are **1-based**. For:
+
+```text
+M13_HTN_OI_GCL_N_R3_rep1.tif
+```
+
+you could use:
+
+```python
+n.source_separator = "_"
+n.subject = 1
+n.condition = 2
+n.eye = 3
+n.layer = 4
+n.quadrant = 5
+n.spatial_bin = 6
+n.replicate = 7
+```
+
+Fields absent from the filename should remain `None`.
+
+## Category definition
+
+```python
+config.run.category = True
+config.category.category_fields = [
+    "condition",
+    "layer",
+]
+```
+
+The active category definition is reflected in the plot-output directory so
+alternative categorical analyses can coexist.
+
+## Morphology-state resolution
+
+On the first DRC run:
+
+```python
+config.clustering.number_of_morphology_states = None
+```
+
+MorphoGlia estimates supported state counts and records the automatic preferred
+interpretation. On later runs, you can choose one of the supported K values.
+
+## Plot settings
+
+```python
+config.plots.dpi = 300
+config.plots.morphology_state_palette = "MG1"
+```
+
+Public palette names:
+
+```text
+MG1, MG2, MG3, MG4,
+plasma, tab10, tab20,
+hls, rocket, flare, magma, Spectral
+```
+
+## Reproducibility
+
+MorphoGlia 2.0.0 ships with `pixi.toml` and `pixi.lock`.
+
+Supported Pixi targets:
+
+- macOS Intel (`osx-64`)
+- macOS Apple Silicon (`osx-arm64`)
+- Windows x86-64 (`win-64`)
+- Linux x86-64 (`linux-64`)
+
+Check an installation with:
+
+```bash
+pixi run doctor
+```
+
+Do not assume historical MorphoGlia output folders are interchangeable with the
+2.0.0 architecture. For a clean major-version analysis, use a fresh output
+directory or dataset copy.
+
+## Troubleshooting
+
+**`pixi: command not found` on macOS**
+
+```bash
+~/.pixi/bin/pixi --version
+```
+
+**macOS blocks `Install MorphoGlia.command`**
+
+Right-click it and choose **Open**.
+
+**Windows installation fails**
+
+The installer writes `MorphoGlia_install_log.txt` in the release directory.
+
+**A later stage is skipped**
+
+Check whether its required upstream output exists. Run the necessary earlier
+stage once, then rerun the downstream stage.
+
+Issues:
+https://github.com/Maya-Arteaga/MorphoGlia/issues
+
+## Version
+
+**MorphoGlia 2.0.0** — Apache License 2.0.

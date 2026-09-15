@@ -1,0 +1,53 @@
+[workspace]
+name = "MorphoGlia"
+version = "2.0.0"
+description = "Reproducible MorphoGlia scientific environment"
+channels = ["conda-forge"]
+platforms = [
+  "osx-64",
+  "osx-arm64",
+  "win-64",
+  "linux-64",
+]
+
+[dependencies]
+python = ">=3.10,<3.11"
+
+# Numerical core
+numpy = ">=1.25,<2"
+pandas = ">=2.2,<2.3"
+scipy = ">=1.10,<1.14"
+
+# Image morphology / machine learning
+scikit-image = "==0.19.3"
+scikit-learn = ">=1.5,<1.6"
+opencv = ">=4.10,<4.11"
+
+# Visualization / image IO
+matplotlib = ">=3.9,<3.10"
+pillow = ">=10,<12"
+tifffile = ">=2024.8,<2025"
+
+# Analysis support
+tqdm = ">=4.67,<5"
+umap-learn = "==0.5.6"
+joblib = ">=1.5,<2"
+threadpoolctl = ">=3.5,<4"
+pyyaml = ">=6,<7"
+
+# GUI runtime
+tk = "8.6.*"
+
+# Packaging
+setuptools = ">=68"
+wheel = "*"
+pip = "*"
+seaborn = ">=0.13,<0.14"
+
+[pypi-dependencies]
+morphoglia = { path = ".", editable = true }
+
+[tasks]
+doctor = "python scripts/smoke_test.py"
+gui = "python -m morphoglia.gui"
+script = "python mg_script.py"
