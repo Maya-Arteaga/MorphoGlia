@@ -1,6 +1,7 @@
 # MorphoGlia 2.0.0
 
 
+<img width="1161" height="260" alt="LOGO_MG3" src="https://github.com/user-attachments/assets/5f2376df-bfb2-413e-b89f-d29b77152570" />
 
 
 
