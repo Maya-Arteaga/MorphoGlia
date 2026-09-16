@@ -1,0 +1,60 @@
+[project]
+name = "morphoglia"
+version = "2.0.0"
+description = "Cell morphology analysis, clustering, mapping, and visualization pipeline"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+license = {text = "Apache-2.0"}
+authors = [
+  {name = "Juan Pablo Maya Arteaga", email = "maya.arteaga.jp@gmail.com"},
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "numpy>=1.25,<2",
+  "pandas>=2.2,<3",
+  "scipy>=1.9,<2",
+  "scikit-image==0.19.3",
+  "scikit-learn>=1.5,<2",
+  "opencv-python>=4.10,<5",
+  "matplotlib>=3.9,<4",
+  "seaborn>=0.13,<0.14",
+  "pillow>=10,<12",
+  "tifffile>=2024.8",
+  "tqdm>=4.67,<5",
+  "umap-learn==0.5.6",
+  "PyYAML>=6,<7",
+  "joblib>=1.5,<2",
+  "threadpoolctl>=3.6,<4",
+]
+
+[project.optional-dependencies]
+legacy = [
+  "hdbscan>=0.8,<0.9",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["morphoglia*"]
+[project.urls]
+Homepage = "https://github.com/Maya-Arteaga/MorphoGlia"
+Repository = "https://github.com/Maya-Arteaga/MorphoGlia"
+Issues = "https://github.com/Maya-Arteaga/MorphoGlia/issues"
+
+[project.scripts]
+morphoglia = "morphoglia.cli:main"
+MG = "morphoglia.cli:main"
+mg = "morphoglia.cli:main"
+morphoglia-run = "morphoglia.cli:main"
+
+[project.gui-scripts]
+morphoglia-gui = "morphoglia.gui.app:main"

@@ -1,0 +1,32 @@
+MORPHOGLIA 2.0.0
+==================
+
+1. EXTRACT THE COMPLETE ZIP.
+   Do not run MorphoGlia from inside the ZIP.
+
+2. FIRST INSTALLATION
+   macOS:          Double-click Install MorphoGlia.command
+   Windows x86-64: Double-click Install MorphoGlia.bat
+   Linux:          ./install_morphoglia.sh
+
+3. NORMAL GUI USE
+   macOS:   Double-click MorphoGlia.app
+   Windows: Double-click MorphoGlia.bat
+   Linux:   pixi run gui
+
+4. SCRIPT USE
+   Edit mg_script.py and run it FROM THIS MorphoGlia_2.0.0 FOLDER.
+
+   macOS/Linux:
+       pixi run python mg_script.py
+
+   Windows with global Pixi:
+       pixi run python .\mg_script.py
+
+   Windows with local Pixi installed by MorphoGlia:
+       .\.pixi-home\bin\pixi.exe run python .\mg_script.py
+
+5. OUTPUT
+   YOUR_DATASET/_MorphoGlia/
+
+Full instructions: README.md
