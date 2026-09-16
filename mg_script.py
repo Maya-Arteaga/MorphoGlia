@@ -25,19 +25,17 @@ if str(INPUT_DIR) == "/path/to/directory":
 config = PipelineConfig(input_dir=INPUT_DIR)
 
 # INPUT ----------------------------------------------------------------
-config.resume = True
+config.resume = True      #True: reuse compatible completed work; False overwrite 
 config.metadata.microns_per_pixel = 1.0  # CHANGE to your microscope calibration.
 config.preprocessing.spatial_dimension = "2d"  # "2d", "3d"
 config.preprocessing.input_mode = "binary"      # "raw", "binary", "labels"
 config.preprocessing.invert = False
 config.preprocessing.save_intermediate = False
 
-# Raw only: "mg1", "mg2", "mg3", "mg4"
+# Raw only. Options: "mg1", "mg2", "mg3", "mg4"
 config.preprocessing.preset = "mg1"
 
 # RUN STAGES -----------------------------------------------------------
-# True = recompute. False = do not recompute.
-# Compatible prerequisite outputs may still be reused.
 config.run.metadata = True
 config.run.preprocessing = True
 config.run.segmentation = True
@@ -46,21 +44,22 @@ config.run.morphometrics = True
 config.run.category = False  # Enable only after defining category_fields.
 config.run.dim_reduction_clustering = True
 config.run.mapping = True
-config.run.spatial_analysis = False  # Not public in 2.0.0.
 config.run.plots = True
+
 
 # INSTANCE POSTPROCESSING ---------------------------------------------
 config.instance_refinement.remove_small = True
-config.instance_refinement.tubular_action = "reconnect"  # keep/remove/reconnect
-config.instance_refinement.large_action = "split"        # keep/remove/split
+config.instance_refinement.tubular_action = "reconnect"  #Options: "keep", "remove", "reconnect"
+config.instance_refinement.large_action = "split"        #Options: "keep", "remove", "split"
 
 # MORPHOLOGY STATES ---------------------------------------------------
-# None = estimate supported K and use the automatic preferred solution.
-config.clustering.number_of_morphology_states = None
+# None = estimate supported K and use the automatic preferred solution. Once you run the dimensionality reduction step, check on the Dimensionality_Reduction_Clustering > Decision > resolution_decision.csv the K solutions and write the k number
+config.clustering.number_of_morphology_states = None     # 5
 
 # NOMENCLATURE --------------------------------------------------------
 # Positions are 1-based. Leave absent fields as None.
 n = config.metadata.nomenclature
+
 n.source_separator = "_"
 n.subject = None
 n.genotype = None
@@ -90,13 +89,20 @@ n.run = None
 # CATEGORY ------------------------------------------------------------
 # Example:
 # config.run.category = True
-# config.category.category_fields = ["condition", "layer"]
+# config.category.category_fields = ["condition", "region"]
 config.category.category_fields = []
 
 # PLOTS ---------------------------------------------------------------
 config.plots.dpi = 300
 config.plots.morphology_state_palette = "MG1"
-config.plots.metadata_order = {}
+config.plots.metadata_order = {
+    #condition": ["SS", "SCOP"],
+    #"region": ["SUB", "CA1", "CA3"],
+}
 
 # RUN -----------------------------------------------------------------
 result = run_pipeline(config)
+
+
+
+
