@@ -589,7 +589,7 @@ stage once, then rerun the downstream stage.
 
 For bug reports or unexpected behavior, please open a
 [GitHub issue](https://github.com/Maya-Arteaga/MorphoGlia/issues) and notify and send files to
-**Email:**  [juan.mayaarteaga@ist.ac.at](mailto:juan.mayaarteaga@ist.ac.at)** 
+**Email:**  [juan.mayaarteaga@ist.ac.at](mailto:juan.mayaarteaga@ist.ac.at)
 
 To help reproduce and diagnose the problem, please briefly describe the issue
 and the steps that led to it. When available, please attach the following files
