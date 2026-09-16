@@ -419,8 +419,31 @@ The installer writes `MorphoGlia_install_log.txt` in the release directory.
 Check whether its required upstream output exists. Run the necessary earlier
 stage once, then rerun the downstream stage.
 
-Issues:
-https://github.com/Maya-Arteaga/MorphoGlia/issues
+
+## Contact and support
+
+For bug reports or unexpected behavior, please open a
+[GitHub issue](https://github.com/Maya-Arteaga/MorphoGlia/issues).
+
+To help reproduce and diagnose the problem, please briefly describe the issue
+and the steps that led to it. When available, please attach the following files
+from the `Technical_Record` folder:
+
+- `configuration.csv`
+- `compute_resources.csv`
+- `analysis_summary.json`
+- `errors.log`
+
+For issues related to instance refinement, please also include the relevant
+`instance_refinement_*` files.
+
+### Scientific questions and contact
+
+**Juan Pablo Maya Arteaga**  
+Institute of Science and Technology Austria (ISTA)  
+Email: [juan.mayaarteaga@ist.ac.at](mailto:juan.mayaarteaga@ist.ac.at)
+
+Collaboration inquiries are also welcome, particularly for projects involving MorphoGlia or related quantitative imaging challenges, including cell culture, cell migration, multi-label imaging, and further characterization of biological phenotypes.
 
 ## Version
 
