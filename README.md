@@ -229,6 +229,8 @@ MG1 is the default full workflow. Preset suitability is dataset-dependent;
 inspect preprocessing output/QC rather than treating a preset as a biological
 assumption.
 
+
+
 # Script interface: `mg_script.py`
 
 `mg_script.py` provides the same MorphoGlia analysis backend as the GUI, but
@@ -249,6 +251,272 @@ folder, for example to:
 
 ```text
 ~/Desktop/MorphoGlia_2.0.0
+```
+
+### 2. Install Pixi and prepare the MorphoGlia environment
+
+The easiest option is to use the included installer:
+
+```text
+Install MorphoGlia.command
+```
+
+Double-click `Install MorphoGlia.command`.
+
+This installs Pixi if necessary, prepares the locked MorphoGlia environment,
+runs the compatibility checks, and opens the GUI.
+
+If you have already used the MorphoGlia GUI installer successfully, Pixi and the
+environment are already installed and you can continue directly to Step 3.
+
+Alternatively, Pixi can be installed manually using the official installer:
+
+```bash
+curl -fsSL https://pixi.sh/install.sh | sh
+```
+
+After installation, open a new Terminal window and verify that Pixi is available:
+
+```bash
+pixi --version
+```
+
+If `pixi` is not yet available on your PATH, use:
+
+```bash
+~/.pixi/bin/pixi --version
+```
+
+### 3. Enter the MorphoGlia folder
+
+```bash
+cd ~/Desktop/MorphoGlia_2.0.0
+```
+
+### 4. Prepare the locked environment
+
+If you did not use `Install MorphoGlia.command`, run this once:
+
+```bash
+pixi install --locked
+```
+
+If Pixi is not on PATH:
+
+```bash
+~/.pixi/bin/pixi install --locked
+```
+
+Pixi will create the MorphoGlia environment using the package versions recorded
+in `pixi.lock`.
+
+### 5. Edit `mg_script.py`
+
+Open `mg_script.py` and define your dataset path, microscope calibration,
+input type, filename nomenclature, and the analysis stages you want to run.
+
+At minimum, replace:
+
+```python
+INPUT_DIR = Path("/path/to/directory")
+```
+
+with the path to your dataset and set the correct microscope calibration:
+
+```python
+config.metadata.microns_per_pixel = 0.227
+```
+
+### 6. Run MorphoGlia
+
+```bash
+pixi run --locked python mg_script.py
+```
+
+You can also use the predefined Pixi task:
+
+```bash
+pixi run --locked script
+```
+
+If Pixi is not on PATH:
+
+```bash
+~/.pixi/bin/pixi run --locked python mg_script.py
+```
+
+For later analyses, you normally only need to edit `mg_script.py` and run the
+same command again.
+
+---
+
+## Windows PowerShell
+
+### 1. Download and extract MorphoGlia
+
+Download `MorphoGlia_2.0.0.zip` from the GitHub Release and extract the complete
+folder, for example to:
+
+```text
+C:\Users\YOUR_NAME\Desktop\MorphoGlia_2.0.0
+```
+
+### 2. Install Pixi and prepare the MorphoGlia environment
+
+The easiest option is to use the included installer:
+
+```text
+Install MorphoGlia.bat
+```
+
+Double-click `Install MorphoGlia.bat`.
+
+The installer can install Pixi locally inside the MorphoGlia folder and prepare
+the complete locked environment. You do not need to install Python or Conda
+separately.
+
+If you already used the MorphoGlia Windows installer successfully, continue
+directly to Step 3.
+
+### 3. Open PowerShell and enter the MorphoGlia folder
+
+```powershell
+cd "$HOME\Desktop\MorphoGlia_2.0.0"
+```
+
+### 4. Prepare the locked environment
+
+If Pixi is installed globally:
+
+```powershell
+pixi install --locked
+```
+
+If you are using the local Pixi installation created by the MorphoGlia
+installer:
+
+```powershell
+.\.pixi-home\bin\pixi.exe install --locked
+```
+
+### 5. Edit `mg_script.py`
+
+Open `mg_script.py` and define your dataset path, microscope calibration,
+input type, filename nomenclature, and the analysis stages you want to run.
+
+At minimum, replace:
+
+```python
+INPUT_DIR = Path("/path/to/directory")
+```
+
+with the path to your dataset and set the correct microscope calibration:
+
+```python
+config.metadata.microns_per_pixel = 0.227
+```
+
+### 6. Run MorphoGlia
+
+With global Pixi:
+
+```powershell
+pixi run --locked python .\mg_script.py
+```
+
+or:
+
+```powershell
+pixi run --locked script
+```
+
+With the local Pixi installation created by the MorphoGlia installer:
+
+```powershell
+.\.pixi-home\bin\pixi.exe run --locked python .\mg_script.py
+```
+
+For later analyses, you normally only need to edit `mg_script.py` and run the
+same command again.
+
+---
+
+## Linux
+
+### 1. Download and extract MorphoGlia
+
+Download `MorphoGlia_2.0.0.zip` from the GitHub Release and extract the complete
+folder, for example to:
+
+```text
+~/Desktop/MorphoGlia_2.0.0
+```
+
+### 2. Install Pixi
+
+Install Pixi using the official installer:
+
+```bash
+curl -fsSL https://pixi.sh/install.sh | sh
+```
+
+Open a new terminal and verify that Pixi is available:
+
+```bash
+pixi --version
+```
+
+### 3. Enter the MorphoGlia folder
+
+```bash
+cd ~/Desktop/MorphoGlia_2.0.0
+```
+
+### 4. Prepare the locked environment
+
+Run this once:
+
+```bash
+pixi install --locked
+```
+
+Pixi will create the complete MorphoGlia environment using the package versions
+recorded in `pixi.lock`.
+
+### 5. Edit `mg_script.py`
+
+Open `mg_script.py` and define your dataset path, microscope calibration,
+input type, filename nomenclature, and the analysis stages you want to run.
+
+At minimum, replace:
+
+```python
+INPUT_DIR = Path("/path/to/directory")
+```
+
+with the path to your dataset and set the correct microscope calibration:
+
+```python
+config.metadata.microns_per_pixel = 0.227
+```
+
+### 6. Run MorphoGlia
+
+```bash
+pixi run --locked python mg_script.py
+```
+
+or:
+
+```bash
+pixi run --locked script
+```
+
+For later analyses, you normally only need to edit `mg_script.py` and run the
+same command again.
+
+
+
 
 ## Editing `mg_script.py`
 
