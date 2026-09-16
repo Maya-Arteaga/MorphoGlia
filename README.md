@@ -1,6 +1,7 @@
 # MorphoGlia 2.0.0
 
-<img width="805" height="371" alt="LOGO_MG" src="https://github.com/user-attachments/assets/9ca9cc94-7972-478a-a0a4-ad15147e4095" />
+<img width="2425" height="2400" alt="LOGO_MG2" src="https://github.com/user-attachments/assets/d0a71106-5167-44ec-af5f-4b6de1d48c09" />
+
 
 
 **MorphoGlia** is a cell-morphology analysis pipeline for image preprocessing,
