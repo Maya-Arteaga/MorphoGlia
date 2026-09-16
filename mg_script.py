@@ -25,7 +25,7 @@ if str(INPUT_DIR) == "/path/to/directory":
 config = PipelineConfig(input_dir=INPUT_DIR)
 
 # INPUT ----------------------------------------------------------------
-config.resume = True      #True: reuse compatible completed work; False overwrite 
+config.resume = True      #True: reuse compatible completed work; False overwrite. CHECK BEFORE RERUNNING ANY STAGE
 config.metadata.microns_per_pixel = 1.0  # CHANGE to your microscope calibration.
 config.preprocessing.spatial_dimension = "2d"  # "2d", "3d"
 config.preprocessing.input_mode = "binary"      # "raw", "binary", "labels"
