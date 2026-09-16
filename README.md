@@ -1,5 +1,8 @@
 # MorphoGlia 2.0.0
 
+<img width="805" height="371" alt="LOGO_MG" src="https://github.com/user-attachments/assets/9ca9cc94-7972-478a-a0a4-ad15147e4095" />
+
+
 **MorphoGlia** is a cell-morphology analysis pipeline for image preprocessing,
 instance segmentation/postprocessing, morphometrics, morphology-state
 estimation, tissue mapping, and visualization.
