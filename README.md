@@ -231,53 +231,24 @@ assumption.
 
 # Script interface: `mg_script.py`
 
-Run the script **from the extracted MorphoGlia release folder**, because Pixi
-uses `pixi.toml` and `pixi.lock` from that directory.
+`mg_script.py` provides the same MorphoGlia analysis backend as the GUI, but
+allows the analysis configuration to be defined explicitly in Python.
 
-### macOS
+You do **not** need to install Python, Conda, or the MorphoGlia dependencies
+manually. MorphoGlia uses **Pixi** to create the complete software environment
+from the included `pixi.toml` and `pixi.lock` files.
 
-```bash
-cd ~/Desktop/MorphoGlia_2.0.0
-pixi run python mg_script.py
-```
+Always run the script from inside the extracted `MorphoGlia_2.0.0` folder.
 
-If Pixi was installed by the macOS installer but is not on PATH:
+## macOS
 
-```bash
-cd ~/Desktop/MorphoGlia_2.0.0
-~/.pixi/bin/pixi run python mg_script.py
-```
+### 1. Download and extract MorphoGlia
 
-### Windows PowerShell
+Download `MorphoGlia_2.0.0.zip` from the GitHub Release and extract the complete
+folder, for example to:
 
-```powershell
-cd "$HOME\Desktop\MorphoGlia_2.0.0"
-```
-
-With global Pixi:
-
-```powershell
-pixi run python .\mg_script.py
-```
-
-With local Pixi created by the MorphoGlia installer:
-
-```powershell
-.\.pixi-home\bin\pixi.exe run python .\mg_script.py
-```
-
-### Linux
-
-```bash
-cd ~/Desktop/MorphoGlia_2.0.0
-pixi run python mg_script.py
-```
-
-You can also use:
-
-```bash
-pixi run script
-```
+```text
+~/Desktop/MorphoGlia_2.0.0
 
 ## Editing `mg_script.py`
 
